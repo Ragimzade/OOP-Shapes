@@ -13,7 +13,6 @@ public class Triangle extends Figure implements Shapeable {
         this.c = c;
     }
 
-
     private double square = -1;
 
     public double getSquare() {
@@ -21,8 +20,13 @@ public class Triangle extends Figure implements Shapeable {
             double ab = a.distanceTo(b);
             double bc = b.distanceTo(c);
             double ac = a.distanceTo(c);
-            double p = (ab + bc + ac) / 2;
-            square = Math.sqrt(p * (p - ab) * (p - bc) * (p - ac));
+            if (ab + bc <= ac || ab + ac <= bc || bc + ac <= bc) {
+                System.out.println("Triangle doesn't exist");
+                throw new NullPointerException();
+            } else {
+                double p = (ab + bc + ac) / 2;
+                square = Math.sqrt(p * (p - ab) * (p - bc) * (p - ac));
+            }
         }
         return square;
     }
@@ -41,6 +45,5 @@ public class Triangle extends Figure implements Shapeable {
     public String getColor() {
         return color;
     }
-
 
 }

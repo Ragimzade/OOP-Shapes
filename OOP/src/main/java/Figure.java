@@ -1,8 +1,7 @@
 public abstract class Figure implements Shapeable {
 
     public String toString() {
-        return getType() + " " + getColor() + " " + getSquare() + " " + getPerimeter();
+        return getType() + " color: " + getColor() + " square: " + getSquare() + " perimeter: " + getPerimeter();
     }
-
 
 }

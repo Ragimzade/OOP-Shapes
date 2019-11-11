@@ -27,13 +27,22 @@ public class Square extends Figure implements Shapeable {
     public double getSquare() {
         if (square == -1) {
             double ab = a.distanceTo(b);
-            square = Math.pow(ab,2);
+            double bc = b.distanceTo(c);
+            double cd = c.distanceTo(d);
+            double da = d.distanceTo(a);
+            if (ab == bc && bc == cd && da==ab) {
+                square = Math.pow(ab, 2);
+            } else {
+                System.out.println("Square doesn't exist");
+                throw new NullPointerException();
+            }
         }
         return square;
     }
 
     public double getPerimeter() {
-        return  Math.sqrt(getSquare()) * 4;
+        return Math.sqrt(getSquare()) * 4;
     }
 
 }
+
