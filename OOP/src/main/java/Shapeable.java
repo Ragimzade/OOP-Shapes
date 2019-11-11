@@ -1,6 +1,5 @@
-
-
 public interface Shapeable {
+
     String getType();
 
     String getColor();
@@ -8,6 +7,5 @@ public interface Shapeable {
     double getSquare();
 
     double getPerimeter();
-
 
 }
