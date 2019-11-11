@@ -39,8 +39,14 @@ public class FigureTest {
 
     @Test
     public void circleTest() {
-        Circle circle = new Circle(new Point(4,8));
-       Assert.assertEquals(circle.toString(),
-               "Circle color: Black square: 251.20000000000005 perimeter: 15.22427190999916");
+        Circle circle = new Circle(new Point(4, 8));
+        Assert.assertEquals(circle.toString(),
+                "Circle color: Black square: 251.20000000000005 perimeter: 15.22427190999916");
+    }
+
+    @Test
+    public void shapeFactoryTest() {
+        ShapeFactory factory= ShapeFactory.getInstance();
+        Assert.assertNotEquals("",factory.createRandomShape());
     }
 }
